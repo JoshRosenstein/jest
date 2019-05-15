@@ -13,12 +13,12 @@ import {
   EXPECTED_COLOR,
   matcherErrorMessage,
   matcherHint,
-  pluralize,
   printExpected,
   printReceived,
   printWithType,
   RECEIVED_COLOR,
 } from 'jest-matcher-utils';
+import {pluralize} from 'jest-util';
 import {MatchersObject, SyncExpectationResult} from './types';
 import {equals} from './jasmineUtils';
 import {iterableEquality, partition, isOneline} from './utils';

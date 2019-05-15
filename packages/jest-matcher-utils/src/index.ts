@@ -43,23 +43,6 @@ export const INVERTED_COLOR = chalk.inverse;
 export const BOLD_WEIGHT = chalk.bold;
 export const DIM_COLOR = chalk.dim;
 
-const NUMBERS = [
-  'zero',
-  'one',
-  'two',
-  'three',
-  'four',
-  'five',
-  'six',
-  'seven',
-  'eight',
-  'nine',
-  'ten',
-  'eleven',
-  'twelve',
-  'thirteen',
-];
-
 export const SUGGEST_TO_CONTAIN_EQUAL = chalk.dim(
   'Looks like you wanted to test for object/array equality with the stricter `toContain` matcher. You probably need to use `toContainEqual` instead.',
 );
@@ -212,9 +195,6 @@ const shouldPrintDiff = (actual: unknown, expected: unknown) => {
 };
 export const diff: typeof jestDiff = (a, b, options) =>
   shouldPrintDiff(a, b) ? jestDiff(a, b, options) : null;
-
-export const pluralize = (word: string, count: number) =>
-  (NUMBERS[count] || count) + ' ' + word + (count === 1 ? '' : 's');
 
 // To display lines of labeled values as two columns with monospace alignment:
 // given the strings which will describe the values,

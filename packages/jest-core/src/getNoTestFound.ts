@@ -7,8 +7,8 @@
 
 import chalk from 'chalk';
 import {Config} from '@jest/types';
+import {pluralize} from 'jest-util';
 import {TestRunData} from './types';
-import pluralize from './pluralize';
 
 export default function getNoTestFound(
   testRunData: TestRunData,
@@ -37,10 +37,9 @@ export default function getNoTestFound(
     '\n' +
     `In ${chalk.bold(globalConfig.rootDir)}` +
     '\n' +
-    `  ${pluralize('file', testFiles, 's')} checked across ${pluralize(
+    `  ${pluralize('file', testFiles)} checked across ${pluralize(
       'project',
       testRunData.length,
-      's',
     )}. Run with \`--verbose\` for more details.` +
     '\n' +
     dataMessage

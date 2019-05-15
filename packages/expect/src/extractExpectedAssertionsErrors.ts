@@ -6,13 +6,8 @@
  *
  */
 
-import {
-  EXPECTED_COLOR,
-  RECEIVED_COLOR,
-  matcherHint,
-  pluralize,
-} from 'jest-matcher-utils';
-
+import {EXPECTED_COLOR, RECEIVED_COLOR, matcherHint} from 'jest-matcher-utils';
+import {pluralize} from 'jest-util';
 import {getState, setState} from './jestMatchersObject';
 
 const resetAssertionsLocalState = () => {

@@ -8,7 +8,7 @@
 import {Config} from '@jest/types';
 import {AggregatedResult} from '@jest/test-result';
 import {CustomConsole} from '@jest/console';
-import {createDirectory, preRunMessage} from 'jest-util';
+import {createDirectory, preRunMessage, pluralize} from 'jest-util';
 import {readConfigs} from 'jest-config';
 import Runtime, {Context} from 'jest-runtime';
 import {ChangedFilesPromise} from 'jest-changed-files';
@@ -24,7 +24,6 @@ import handleDeprecationWarnings from '../lib/handle_deprecation_warnings';
 import runJest from '../runJest';
 import TestWatcher from '../TestWatcher';
 import watch from '../watch';
-import pluralize from '../pluralize';
 import logDebugMessages from '../lib/log_debug_messages';
 
 const {print: preRunMessagePrint} = preRunMessage;
@@ -98,7 +97,7 @@ export const runCLI = async (
   if (openHandles && openHandles.length) {
     const formatted = formatHandleErrors(openHandles, configs[0]);
 
-    const openHandlesString = pluralize('open handle', formatted.length, 's');
+    const openHandlesString = pluralize('open handle', formatted.length);
 
     const message =
       chalk.red(

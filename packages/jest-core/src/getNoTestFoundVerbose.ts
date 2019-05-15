@@ -2,7 +2,7 @@
 
 import chalk from 'chalk';
 import {Config} from '@jest/types';
-import pluralize from './pluralize';
+import {pluralize} from 'jest-util';
 import {Stats, TestRunData} from './types';
 
 export default function getNoTestFoundVerbose(
@@ -32,7 +32,7 @@ export default function getNoTestFoundVerbose(
 
     return testRun.matches.total
       ? `In ${chalk.bold(config.rootDir)}\n` +
-          `  ${pluralize('file', testRun.matches.total || 0, 's')} checked.\n` +
+          `  ${pluralize('file', testRun.matches.total || 0)} checked.\n` +
           statsMessage
       : `No files found in ${config.rootDir}.\n` +
           `Make sure Jest's configuration does not exclude this directory.` +

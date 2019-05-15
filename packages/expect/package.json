@@ -16,7 +16,8 @@
     "jest-get-type": "^24.8.0",
     "jest-matcher-utils": "^24.8.0",
     "jest-message-util": "^24.8.0",
-    "jest-regex-util": "^24.3.0"
+    "jest-regex-util": "^24.3.0",
+    "jest-util": "^24.8.0"
   },
   "devDependencies": {
     "@types/ansi-styles": "^3.2.1",
